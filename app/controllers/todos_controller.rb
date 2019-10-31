@@ -11,13 +11,11 @@ class TodosController < ApplicationController
     def create
         @todo = Todo.new(todo_params)
         if @todo.save
-            puts "perfect"
-            flash[:notice] = "Listo!"
+            flash[:notice] = "¡Tarea agregada!"
             redirect_to root_path
 
         else            
-            flash[:notice] = "Tenemos un problema"
-            puts "perfect 2"
+            flash[:notice] = "Trata de nuevo, hubo un error."
             redirect_to root_path
 
         end
