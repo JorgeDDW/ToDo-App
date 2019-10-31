@@ -1,0 +1,29 @@
+<h1>Have something to do?</h1>
+<h2>Enter an task to do below.</h2>
+<br>
+
+<div class="columns">
+ <div class="column">
+    <h3>Your To Do List</h3>
+    <ol class="list is-hoverable">
+        <% @todo.each do |t| %>
+          <li class = "list-item">
+            <%= t.item %> 
+              <%= link_to 'Delete', t, method: :delete,
+                                    data: {confirm: "Delete this task."} %>
+              <span class="icon">
+                <i class="fas fa-edit"></i>
+              </span>
+              <span class="icon">
+                <i class="fas fa-trash"></i>
+              </span>
+          </li>
+        <% end %>
+    </ol>
+  </div>
+  <div class="column">
+      <%= render 'form' %>
+  </div>
+
+</div>
+
