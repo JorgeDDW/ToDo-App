@@ -15,7 +15,7 @@
                     <% @todo.each do |t| %>
                       <li class = "list-item">
                         <%= t.item %> 
-                          <%= link_to '', class:"fas fa-edit"%>
+                          <%= link_to '', t, class:"fas fa-edit"%>
                           <%= link_to '', t, method: :delete,
                                           data: {confirm: "Delete this task."},
                                           class: "fas fa-trash" %>
