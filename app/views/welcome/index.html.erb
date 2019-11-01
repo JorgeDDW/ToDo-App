@@ -8,29 +8,25 @@
               <strong>Have something Do Do?</strong><br>
               <small>Enter an task to do below.</small>
             </div>
-
-<div class="columns">
- <div class="column ">
-    <strong>Your To Do List</strong> <br>
-    <ol class="list is-hoverable">
-        <% @todo.each do |t| %>
-          <li class = "list-item">
-            <%= t.item %> 
-              <%= link_to '', class:"fas fa-edit"%>
-              <%= link_to '', t, method: :delete,
-                                    data: {confirm: "Delete this task."},
-                                    class: "fas fa-trash" %>
-          </li>
-        <% end %>
-    </ol>
-  
-  </div>
-  <div class="column">
-      <%= render 'form' %>
-  </div>
-
-</div>
-
+            <div class="columns">
+            <div class="column ">
+                <strong>Your To Do List</strong> <br>
+                <ol class="list is-hoverable">
+                    <% @todo.each do |t| %>
+                      <li class = "list-item">
+                        <%= t.item %> 
+                          <%= link_to '', class:"fas fa-edit"%>
+                          <%= link_to '', t, method: :delete,
+                                          data: {confirm: "Delete this task."},
+                                          class: "fas fa-trash" %>
+                      </li>
+                    <% end %>
+                </ol>
+              </div>
+              <div class="column">
+                  <%= render 'form' %>
+              </div>
+            </div>
           </div>
         </div>
       </div>
