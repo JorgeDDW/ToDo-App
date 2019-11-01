@@ -6,6 +6,10 @@ class TodosController < ApplicationController
     def new
         @todo = Todo.new
     end
+
+    def edit
+        @todo = Todo.find(params[:id])
+    end
     
 
     def create
@@ -18,6 +22,16 @@ class TodosController < ApplicationController
             flash[:notice] = "Trata de nuevo, hubo un error."
             redirect_to root_path
 
+        end
+    end
+
+    def update
+        @todo = Todo.find(params[:id])
+
+        if @todo.update(todo_params)
+            redirect_to root_path
+        else
+            redirect_to root_path
         end
     end
 

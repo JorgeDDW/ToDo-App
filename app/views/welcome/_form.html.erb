@@ -1,5 +1,5 @@
 <%= form_with scope: @todo, url: todos_path do |f|%>
     <%= f.label "Add Your Pending Task", class: "label"%>
     <%= f.text_field :item, class: "input", placeholder: "Standup Meetings"%>
-    <br>    <%= f.submit "Add Task", class: "button is-danger"%>
+    <br>    <%= f.submit "Add Task", class: "button is-danger is-fullwidth"%>
 <% end %>
